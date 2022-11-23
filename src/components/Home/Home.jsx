@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
 
-const Home = () => {
+const Home = (props) => {
+  const dishesList = props.dishes.map((dish) => {
+    return (
+      <div>
+        <div>
+        Name:<h2>{dish.name}</h2>
+          Description: <h2>{dish.description}</h2>
+          Price: <h2>{dish.price}</h2>
+        </div>
+        <hr/>        
+      </div>
+    );
+  });
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <p>{dishesList}</p>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
